@@ -1,0 +1,57 @@
+{
+  "name": "theme-creator-cli",
+  "version": "1.0.0-beta.1",
+  "description": "theme creator cli",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "bin": {
+    "theme-creator-cli": "./lib/index.js"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "https://github.com/huangshuwei",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huangshuwei/theme-creator-cli.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc --watch"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "theme",
+    "themes",
+    "switch",
+    "creator"
+  ],
+  "dependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/lodash": "^4.14.150",
+    "autoprefixer": "^9.8.0",
+    "chokidar": "^3.4.0",
+    "commander": "^5.1.0",
+    "consola": "^2.12.1",
+    "jsdom": "^16.2.2",
+    "less": "^3.11.1",
+    "postcss": "^7.0.30",
+    "postcss-discard-duplicates": "^4.0.2",
+    "postcss-merge-rules": "^4.0.3",
+    "sass": "^1.26.5",
+    "uglifycss": "^0.0.29"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "typescript": "^3.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/huangshuwei/theme-creator-cli/issues"
+  },
+  "homepage": "https://github.com/huangshuwei/theme-creator-cli/blob/master/README.md"
+}
