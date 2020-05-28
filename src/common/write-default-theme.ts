@@ -27,12 +27,22 @@ export function writeDefaultThemes(): Promise<any> {
         return JSDOM.fromFile(htmlFile, {
             runScripts: "outside-only"
         }).then((dom: any) => {
-            dom.window.document = setDomTheme(
-                defaultTheme,
-                dom.window.document
-            );
+            // fixed output empty html,when html file is occupied
+            const bodyContent = dom.window.document.getElementsByTagName(
+                "body"
+            )[0].innerHTML;
+            if (bodyContent.length === 0) {
+                return Promise.reject(
+                    `This html file is occupied or empty:\n${htmlFile}`
+                );
+            } else {
+                dom.window.document = setDomTheme(
+                    defaultTheme,
+                    dom.window.document
+                );
 
-            return outputFile(htmlFile, dom.serialize());
+                return outputFile(htmlFile, dom.serialize());
+            }
         });
     });
 
