@@ -13,8 +13,8 @@
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-scripts": "3.4.1",
-        "theme-creator-cli": "^1.1.12",
-        "theme-creator-tool": "^0.1.0"
+        "theme-creator-cli": "^1.0.0-beta.1",
+        "theme-switcher-tool": "^0.1.0"
     },
     "scripts": {
         "dev": "concurrently \"theme-creator-cli dev\" \"react-scripts start\"",

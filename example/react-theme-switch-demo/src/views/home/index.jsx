@@ -26,7 +26,7 @@ const themes = [
     }
 ];
 
-const themeList = window.theme_switcher_cli_themeVars.map(item => {
+const themeList = window.theme_creator_cli_themeVars.map(item => {
     item.themeName = item.key;
     item.themePath = item.themePath;
     return item;
