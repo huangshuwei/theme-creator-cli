@@ -27,9 +27,10 @@ const themes = [
 ];
 
 const themeList = window.theme_creator_cli_themeVars.map(item => {
-    item.themeName = item.key;
-    item.themePath = item.themePath;
-    return item;
+    return {
+        themeName: item.key,
+        themePath: item.themePath
+    };
 });
 
 const themeSwitcherTool = SwitcherThemeTool({
@@ -38,8 +39,6 @@ const themeSwitcherTool = SwitcherThemeTool({
     useStorage: true,
     storageKey: "theme_switcher_tool_theme"
 });
-
-let msgComp;
 
 export default class Home extends React.Component {
     state = {
@@ -63,21 +62,17 @@ export default class Home extends React.Component {
             })
         });
 
-        themeSwitcherTool.switcher({
-            themeName: themeName,
-            loadingFn: this.switchThemeLoding,
-            completedFn: this.switchThemeCompleted
-        });
-    }
+        // loading
+        let msgComp = message.loading("theme loading...");
 
-    // switch Theme Loding
-    switchThemeLoding() {
-        msgComp = message.loading("theme loading...");
-    }
-
-    // switch Theme Completed
-    switchThemeCompleted() {
-        setTimeout(msgComp);
+        themeSwitcherTool
+            .switcher({
+                themeName: themeName,
+                completedFn: this.switchThemeCompleted
+            })
+            .then(() => {
+                setTimeout(msgComp);
+            });
     }
 
     render() {
