@@ -19,16 +19,19 @@ body {
   width: 100%;
   color: #141414;
 }
-.home .home-top-bar .title {
+.home .home-top-bar .left {
   margin-left: 50px;
   font-size: 30px;
   color: #1989fa;
 }
-.home .home-top-bar .switch-theme-tool {
+.home .home-top-bar .right {
   margin-right: 50px;
   display: flex;
 }
-.home .home-top-bar .switch-theme-tool .color-item {
+.home .home-top-bar .right .tool {
+  display: flex;
+}
+.home .home-top-bar .right .tool .color-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -40,20 +43,23 @@ body {
   border-radius: 2px;
   cursor: pointer;
 }
-.home .home-top-bar .switch-theme-tool .color-item .icon-check {
+.home .home-top-bar .right .tool .color-item .icon-check {
   color: #fff;
 }
-.home .home-top-bar .switch-theme-tool .theme-orange {
+.home .home-top-bar .right .tool .theme-orange {
   background-color: #ed6a0c;
 }
-.home .home-top-bar .switch-theme-tool .theme-black {
+.home .home-top-bar .right .tool .theme-black {
   background-color: #000;
 }
-.home .home-top-bar .switch-theme-tool .theme-blue {
+.home .home-top-bar .right .tool .theme-blue {
   background-color: #1989fa;
 }
-.home .home-top-bar .switch-theme-tool .theme-red {
+.home .home-top-bar .right .tool .theme-red {
   background-color: #f5222d;
+}
+.home .home-top-bar .right .link-info {
+  display: flex;
 }
 .home .home-content .content-item {
   margin-bottom: 10px;

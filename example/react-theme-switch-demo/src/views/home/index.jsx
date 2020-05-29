@@ -1,5 +1,5 @@
 import React from "react";
-import { message } from "antd";
+import { message, Menu, Dropdown } from "antd";
 import Table from "./table";
 import Checkbox from "./checkbox";
 import Radio from "./radio";
@@ -89,28 +89,58 @@ export default class Home extends React.Component {
     }
 
     render() {
+        const menu = (
+            <Menu>
+                <Menu.Item>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://www.alipay.com/"
+                    >
+                        1st menu item
+                    </a>
+                </Menu.Item>
+                <Menu.Item>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://www.taobao.com/"
+                    >
+                        2nd menu item
+                    </a>
+                </Menu.Item>
+            </Menu>
+        );
+
         return (
             <div className="home">
                 <div className="home-top-bar">
-                    <div className="title">
+                    <div className="left">
                         theme-creator-cli React Ant.Design UI Example
                     </div>
-                    <div className="switch-theme-tool">
-                        {this.state.themes.map((theme, index) => {
-                            return (
-                                <span
-                                    key={index}
-                                    onClick={() =>
-                                        this.changeTheme(theme.themeName)
-                                    }
-                                    className={`${theme.themeName} color-item`}
-                                >
-                                    {theme.selected && (
-                                        <i className="iconfont icon-check" />
-                                    )}
-                                </span>
-                            );
-                        })}
+                    <div className="right">
+                        <div className="tool">
+                            {this.state.themes.map((theme, index) => {
+                                return (
+                                    <span
+                                        key={index}
+                                        onClick={() =>
+                                            this.changeTheme(theme.themeName)
+                                        }
+                                        className={`${theme.themeName} color-item`}
+                                    >
+                                        {theme.selected && (
+                                            <i className="iconfont icon-check" />
+                                        )}
+                                    </span>
+                                );
+                            })}
+                        </div>
+                    </div>
+                    <div className="link-info">
+                        <Dropdown overlay={menu} placement="bottomLeft">
+                            <a>bottomLeft</a>
+                        </Dropdown>
                     </div>
                 </div>
                 <div className="home-content">
@@ -153,7 +183,9 @@ export default class Home extends React.Component {
                     <div className="content-item">
                         <div className="content-item-block">
                             <span className="icon" />
-                            <span className="title">Github Comments(need proxy)</span>
+                            <span className="title">
+                                Github Comments(need proxy)
+                            </span>
                         </div>
                         <div id="utterances-github-comments-plugin"></div>
                     </div>

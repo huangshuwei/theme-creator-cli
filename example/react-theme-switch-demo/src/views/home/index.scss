@@ -10,43 +10,50 @@
         width: 100%;
         color: $app-text-color;
 
-        .title {
+        .left {
             margin-left: 50px;
             font-size: 30px;
             color: $home-top-bar-title-color;
         }
 
-        .switch-theme-tool {
+        .right {
             margin-right: 50px;
             display: flex;
-            .color-item {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 20px;
-                height: 20px;
-                margin-right: 8px;
-                font-weight: 700;
-                text-align: center;
-                border-radius: 2px;
-                cursor: pointer;
-            }
 
-            .color-item .icon-check {
-                color: #fff;
-            }
+            .tool {
+                display: flex;
+                .color-item {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 8px;
+                    font-weight: 700;
+                    text-align: center;
+                    border-radius: 2px;
+                    cursor: pointer;
+                }
 
-            .theme-orange {
-                background-color: #ed6a0c;
+                .color-item .icon-check {
+                    color: #fff;
+                }
+
+                .theme-orange {
+                    background-color: #ed6a0c;
+                }
+                .theme-black {
+                    background-color: #000;
+                }
+                .theme-blue {
+                    background-color: #1989fa;
+                }
+                .theme-red {
+                    background-color: #f5222d;
+                }
             }
-            .theme-black {
-                background-color: #000;
-            }
-            .theme-blue {
-                background-color: #1989fa;
-            }
-            .theme-red {
-                background-color: #f5222d;
+            .link-info {
+                display: flex;
             }
         }
     }
