@@ -6,6 +6,10 @@ import Radio from "./radio";
 import Button from "./button";
 import Collapse from "./collapse";
 import SwitcherThemeTool from "theme-switcher-tool";
+import {
+    addGithubComment,
+    setGithubCommentTheme
+} from "../../utils/github-comment";
 
 const themes = [
     {
@@ -51,6 +55,9 @@ export default class Home extends React.Component {
         if (currentTheme) {
             this.changeTheme(currentTheme);
         }
+
+        // add comments plugin
+        addGithubComment("#utterances-github-comments-plugin");
     }
 
     // change theme
@@ -71,7 +78,14 @@ export default class Home extends React.Component {
                 completedFn: this.switchThemeCompleted
             })
             .then(() => {
+                // hide loading
                 setTimeout(msgComp);
+
+                // set github comments theme
+                setGithubCommentTheme(
+                    "#utterances-github-comments-plugin iframe",
+                    themeName
+                );
             });
     }
 
@@ -135,6 +149,14 @@ export default class Home extends React.Component {
                             <span className="title">Collapse</span>
                         </div>
                         <Collapse />
+                    </div>
+                    {/* add github comments */}
+                    <div className="content-item">
+                        <div className="content-item-block">
+                            <span className="icon" />
+                            <span className="title">Github Comments(need proxy)</span>
+                        </div>
+                        <div id="utterances-github-comments-plugin"></div>
                     </div>
                 </div>
             </div>
