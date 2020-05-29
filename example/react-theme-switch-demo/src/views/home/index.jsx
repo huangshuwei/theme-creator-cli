@@ -74,8 +74,7 @@ export default class Home extends React.Component {
 
         themeSwitcherTool
             .switcher({
-                themeName: themeName,
-                completedFn: this.switchThemeCompleted
+                themeName: themeName
             })
             .then(() => {
                 // hide loading
