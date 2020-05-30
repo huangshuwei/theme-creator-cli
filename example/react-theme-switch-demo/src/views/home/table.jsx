@@ -72,6 +72,27 @@ const columns = [
       address: 'Sidney No. 1 Lake Park',
       tags: ['cool', 'teacher'],
     },
+    {
+      key: '4',
+      name: 'Jerry',
+      age: 12,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice'],
+    },
+    {
+      key: '5',
+      name: 'Tom',
+      age: 32,
+      address: 'china shanghai',
+      tags: ['loser'],
+    },
+    {
+      key: '6',
+      name: 'TomJerry',
+      age: 18,
+      address: 'Japa No. 1 Lake Park',
+      tags: ['cool'],
+    },
   ];
 
 export default class Index extends React.Component {
