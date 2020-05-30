@@ -60,6 +60,10 @@ body {
 }
 .home .home-top-bar .right .link-info {
   display: flex;
+  margin-left: 100px;
+}
+.home .home-top-bar .right .link-info .iconfont:hover {
+  cursor: pointer;
 }
 .home .home-content .content-item {
   margin-bottom: 10px;

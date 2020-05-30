@@ -54,6 +54,10 @@
             }
             .link-info {
                 display: flex;
+                margin-left: 100px;
+                .iconfont:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

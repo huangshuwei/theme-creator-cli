@@ -1,5 +1,6 @@
 import React from "react";
 import { message, Menu, Dropdown } from "antd";
+import { DownOutlined } from "@ant-design/icons";
 import Table from "./table";
 import Checkbox from "./checkbox";
 import Radio from "./radio";
@@ -8,32 +9,32 @@ import Collapse from "./collapse";
 import SwitcherThemeTool from "theme-switcher-tool";
 import {
     addGithubComment,
-    setGithubCommentTheme
+    setGithubCommentTheme,
 } from "../../utils/github-comment";
 
 const themes = [
     {
         themeName: "theme-black",
-        selected: false
+        selected: false,
     },
     {
         themeName: "theme-blue",
-        selected: false
+        selected: false,
     },
     {
         themeName: "theme-orange",
-        selected: false
+        selected: false,
     },
     {
         themeName: "theme-red",
-        selected: false
-    }
+        selected: false,
+    },
 ];
 
-const themeList = window.theme_creator_cli_themeVars.map(item => {
+const themeList = window.theme_creator_cli_themeVars.map((item) => {
     return {
         themeName: item.key,
-        themePath: item.themePath
+        themePath: item.themePath,
     };
 });
 
@@ -41,12 +42,12 @@ const themeSwitcherTool = SwitcherThemeTool({
     themeList: themeList,
     styleLinkId: "theme_creator_cli_style_id",
     useStorage: true,
-    storageKey: "theme_switcher_tool_theme"
+    storageKey: "theme_switcher_tool_theme",
 });
 
 export default class Home extends React.Component {
     state = {
-        themes: themes
+        themes: themes,
     };
 
     componentDidMount() {
@@ -63,10 +64,10 @@ export default class Home extends React.Component {
     // change theme
     changeTheme(themeName) {
         this.setState({
-            themes: this.state.themes.slice().map(item => {
+            themes: this.state.themes.slice().map((item) => {
                 item.selected = themeName === item.themeName;
                 return item;
-            })
+            }),
         });
 
         // loading
@@ -74,7 +75,7 @@ export default class Home extends React.Component {
 
         themeSwitcherTool
             .switcher({
-                themeName: themeName
+                themeName: themeName,
             })
             .then(() => {
                 // hide loading
@@ -95,18 +96,18 @@ export default class Home extends React.Component {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="http://www.alipay.com/"
+                        href="https://github.com/huangshuwei/theme-creator-cli"
                     >
-                        1st menu item
+                        theme-creator-cli
                     </a>
                 </Menu.Item>
                 <Menu.Item>
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="http://www.taobao.com/"
+                        href="https://github.com/huangshuwei/theme-switcher-tool"
                     >
-                        2nd menu item
+                        theme-switcher-tool
                     </a>
                 </Menu.Item>
             </Menu>
@@ -136,11 +137,14 @@ export default class Home extends React.Component {
                                 );
                             })}
                         </div>
-                    </div>
-                    <div className="link-info">
-                        <Dropdown overlay={menu} placement="bottomLeft">
-                            <a>bottomLeft</a>
-                        </Dropdown>
+                        <div className="link-info">
+                            <Dropdown overlay={menu} trigger="click">
+                                <i className="iconfont icon-GitHub">
+                                    &nbsp;&nbsp;
+                                    <DownOutlined />
+                                </i>
+                            </Dropdown>
+                        </div>
                     </div>
                 </div>
                 <div className="home-content">
@@ -179,7 +183,6 @@ export default class Home extends React.Component {
                         </div>
                         <Collapse />
                     </div>
-                    {/* add github comments */}
                     <div className="content-item">
                         <div className="content-item-block">
                             <span className="icon" />
@@ -187,6 +190,7 @@ export default class Home extends React.Component {
                                 Github Comments(need proxy)
                             </span>
                         </div>
+                        {/* add github comments */}
                         <div id="utterances-github-comments-plugin"></div>
                     </div>
                 </div>

@@ -60,6 +60,10 @@ body {
 }
 .home .home-top-bar .right .link-info {
   display: flex;
+  margin-left: 100px;
+}
+.home .home-top-bar .right .link-info .iconfont:hover {
+  cursor: pointer;
 }
 .home .home-content .content-item {
   margin-bottom: 10px;
@@ -6906,7 +6910,7 @@ textarea.ant-picker-input > input {
   padding: 4px 0;
   text-align: left;
   list-style-type: none;
-  background-color: #fff;
+  background-color: #323233;
   background-clip: padding-box;
   border-radius: 4px;
   outline: none;
@@ -23464,4 +23468,7 @@ div.ant-typography-edit-content.ant-typography-rtl {
 }
 .ant-collapse > .ant-collapse-item > .ant-collapse-header {
   color: #dcdee0;
+}
+.ant-dropdown-menu-item > a:hover {
+  background-color: #323233;
 }
